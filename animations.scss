@@ -1,0 +1,16 @@
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulse {
+  100% {
+    transform: scale(0.7);
+  }
+}
+@keyframes move-x {
+  100% {
+    transform: translateX(20px);
+  }
+}
+
