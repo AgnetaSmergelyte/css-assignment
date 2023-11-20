@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RagFood</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
           integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
@@ -12,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&family=Manrope&family=Oleo+Script:wght@700&display=swap"
           rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
 <div class="top-bar">
@@ -40,7 +43,7 @@
 </div>
 <div class="nav-bar">
     <div class="container d-flex space-btw a-center">
-        <div class="logo">
+        <div class="logo d-flex a-center">
             <img src="images/logo.png" alt="">
         </div>
         <div class="nav d-flex a-center d-none-md">
@@ -48,7 +51,22 @@
             <a href="#">About</a>
             <a href="#">Menu</a>
             <a href="#">Chefs</a>
-            <a href="#">Pages<i class="fas fa-angle-down"></i></a>
+            <a href="#" id="pages-desktop">Pages<i class="fas fa-angle-down"></i>
+                <ul class="sub-menu" id="pages-sub-menu-d">
+                    <li>Menu Details</li>
+                    <li>Blog Details</li>
+                    <li>Cart View</li>
+                    <li>Checkout</li>
+                    <li>Payment</li>
+                    <li>Testimonial</li>
+                    <li>404/Error</li>
+                    <li>FAQs</li>
+                    <li>Sign In</li>
+                    <li>Sign Up</li>
+                    <li>Forgot Password</li>
+                    <li>Terms and conditions</li>
+                </ul>
+            </a>
             <a href="#">Blog</a>
             <a href="#">Contact</a>
         </div>
@@ -61,11 +79,44 @@
         <div class="hamburger d-none d-block-md">
             <i class="fas fa-bars"></i>
         </div>
+
+        <div class="mobile-nav">
+            <div class="d-flex f-col a-center">
+                <a href="#" class="active">Home</a>
+                <a href="#">About</a>
+                <a href="#">Menu</a>
+                <a href="#">Chefs</a>
+                <a href="#"  id="pages-mobile">Pages<i class="fas fa-angle-down"></i>
+                    <ul class="sub-menu" id="pages-sub-menu-m">
+                        <li>Menu Details</li>
+                        <li>Blog Details</li>
+                        <li>Cart View</li>
+                        <li>Checkout</li>
+                        <li>Payment</li>
+                        <li>Testimonial</li>
+                        <li>404/Error</li>
+                        <li>FAQs</li>
+                        <li>Sign In</li>
+                        <li>Sign Up</li>
+                        <li>Forgot Password</li>
+                        <li>Terms and conditions</li>
+                    </ul>
+                </a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="nav-icons d-flex j-center">
+                <i class="fas fa-shopping-basket relative">
+                    <span class="cart-item-count">05</span>
+                </i>
+                <i class="fas fa-user-alt"></i>
+            </div>
+        </div>
     </div>
 </div>
 <div class="header-wrapper">
     <div class="header relative">
-        <div class="container d-flex a-center gap1 f-col-md mx5-md mx1-sm m0-xs">
+        <div class="container d-flex a-center gap2 f-col-md mx5-md mx1-sm m0-xs">
             <div class="flex1">
                 <h3>Satisfy Your Cravings</h3>
                 <h1>Delicious Foods With Wonderful Eating</h1>
@@ -85,7 +136,11 @@
             </div>
             <div class="flex1">
                 <div class="img-circle relative">
-                    <img src="images/slider_img_1.png" alt="">
+                    <div></div>
+                    <img class="spin-bg-img" src="images/banner_img_shapes.png" alt="">
+                    <div class="no-spin-img-wrapper">
+                        <img src="images/slider_img_1.png" alt="">
+                    </div>
                     <div class="discount-circle d-flex a-center j-center">35 % <br> off</div>
                 </div>
             </div>
@@ -710,6 +765,7 @@
         </div>
     </div>
 </div>
+<div id="changing-numbers"></div>
 <div class="rice-bg">
     <div class="bg-dark-layer py-100">
         <div class="container d-flex f-col-md gap1">
@@ -949,7 +1005,7 @@
     </div>
 </div>
 <footer class="text-center color-main p1">
-    <p class="text-white m0">Copyright <span class="text-bold">© RegFood 2023</span>. All Rights Reserved</p>
+    <p class="text-white m0">Copyright <span class="text-bold">© RegFood 2019</span>. All Rights Reserved</p>
 </footer>
 <div class="finger">
     <i class="fas fa-hand-point-up"></i>

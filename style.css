@@ -13,6 +13,10 @@
     transform: translateX(20px);
   }
 }
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .d-flex {
   display: flex;
 }
@@ -63,6 +67,10 @@
 
 .gap1 {
   gap: 1rem;
+}
+
+.gap2 {
+  gap: 2rem;
 }
 
 .gap-card {
@@ -134,10 +142,10 @@ body {
 a {
   text-decoration: none;
   font-family: "Manrope", sans-serif;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 a i {
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 p {
@@ -228,6 +236,7 @@ h5 {
   background-color: #231f40;
   height: 50px;
   box-sizing: border-box;
+  transition: 0.3s;
 }
 .top-bar .triangle-nav-left {
   width: 0;
@@ -275,7 +284,7 @@ h5 {
   align-items: center;
   justify-content: center;
   margin: 0.3rem;
-  transition: 0.2s;
+  transition: 0.3s;
   cursor: pointer;
 }
 .social i:hover {
@@ -291,12 +300,13 @@ h5 {
   box-sizing: border-box;
   background-color: white;
   position: sticky;
-  z-index: 5;
   top: 0;
   border-bottom: #dddddd solid 1px;
+  z-index: 5;
 }
 .nav-bar .container {
   height: 79px;
+  position: relative;
 }
 .nav-bar a {
   color: black;
@@ -330,7 +340,7 @@ h5 {
   align-items: center;
   justify-content: center;
   margin: 0.3rem;
-  transition: 0.2s;
+  transition: 0.3s;
   cursor: pointer;
   height: 40px;
   width: 40px;
@@ -355,7 +365,7 @@ h5 {
   align-items: center;
   justify-content: center;
   margin: 0.3rem;
-  transition: 0.2s;
+  transition: 0.3s;
   cursor: pointer;
   height: 25px;
   width: 25px;
@@ -372,6 +382,64 @@ h5 {
   border: rgba(0, 0, 0, 0.1) solid 1px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+#pages-desktop {
+  position: relative;
+}
+
+#pages-mobile {
+  position: relative;
+}
+
+.sub-menu {
+  height: 0;
+  overflow: hidden;
+  transition: 0.3s all;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  background-color: white;
+  width: 250px;
+  max-width: 100vw;
+  border-radius: 5px;
+  color: #231f40;
+  transform: translateY(0rem);
+  box-sizing: border-box;
+  box-shadow: rgba(100, 100, 111, 0.15) 0px 7px 29px 0px;
+  -webkit-box-shadow: rgba(100, 100, 111, 0.15) 0px 7px 29px 0px;
+  -moz-box-shadow: rgba(100, 100, 111, 0.15) 0px 7px 29px 0px;
+}
+.sub-menu li {
+  padding: 1rem 2rem 1rem 0rem;
+  transition: 0.3s;
+  list-style: none;
+}
+.sub-menu li:hover {
+  color: #ff7c08;
+  list-style: unset;
+  margin-left: 0.2rem;
+}
+
+#pages-sub-menu-m {
+  transform: translateY(-1.5rem);
+  z-index: 20;
+  left: -50%;
+}
+
+.show-sub-menu {
+  height: 500px;
+  overflow: auto;
+  transform: translateY(-1rem);
+}
+
+.show-sub-menu-mobile {
+  height: 250px;
+  overflow: auto;
 }
 
 .header-wrapper {
@@ -414,7 +482,7 @@ button {
   border-radius: 30px;
   font-family: "Manrope", sans-serif;
   font-weight: 600;
-  transition: 0.2s ease-in;
+  transition: 0.3s ease-in;
   text-align: center;
   cursor: pointer;
 }
@@ -454,12 +522,25 @@ button:hover span:nth-child(2) {
 }
 
 .img-circle {
-  padding: 3rem;
+  padding: 1.5rem;
   text-align: center;
+}
+.img-circle .spin-bg-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  animation: rotate 30s infinite linear;
+}
+.img-circle .no-spin-img-wrapper {
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 1;
 }
 .img-circle img {
   width: 100%;
-  border-radius: 100%;
+  border-radius: 50%;
 }
 .img-circle .discount-circle {
   position: absolute;
@@ -476,6 +557,7 @@ button:hover span:nth-child(2) {
   top: 0;
   left: 0;
   margin: 3rem;
+  z-index: 2;
 }
 
 .header .banner-shape-1 {
@@ -532,7 +614,7 @@ button:hover span:nth-child(2) {
   align-items: center;
   justify-content: center;
   margin: 0.3rem;
-  transition: 0.2s;
+  transition: 0.3s;
   cursor: pointer;
   width: 40px;
   height: 40px;
@@ -552,7 +634,7 @@ button:hover span:nth-child(2) {
   align-items: center;
   justify-content: center;
   margin: 0.3rem;
-  transition: 0.2s;
+  transition: 0.3s;
   cursor: pointer;
   width: 40px;
   height: 40px;
@@ -604,7 +686,7 @@ button:hover span:nth-child(2) {
   align-items: center;
   justify-content: center;
   margin: 0.3rem;
-  transition: 0.2s;
+  transition: 0.3s;
   cursor: pointer;
   font-size: 0.9rem;
 }
@@ -932,7 +1014,7 @@ button:hover span:nth-child(2) {
   border-radius: 0 4px 4px 4px;
   font-size: 16px;
   font-weight: 600;
-  transition: 0.2s;
+  transition: 0.3s;
   cursor: pointer;
 }
 .cart-label div {
@@ -966,7 +1048,7 @@ button:hover span:nth-child(2) {
   border-radius: 4px;
   padding: 8px;
   margin: 2px;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 .food-icons i:hover {
   background-color: #ff7c08;
@@ -984,7 +1066,7 @@ button:hover span:nth-child(2) {
   -moz-box-shadow: rgba(100, 100, 111, 0.15) 0px 7px 29px 0px;
   padding: 30px;
   text-align: center;
-  transition: 0.3s;
+  transition: 0.5s ease;
   position: relative;
   margin: 0 13px 30px;
 }
@@ -1064,7 +1146,7 @@ button:hover span:nth-child(2) {
   align-items: center;
   justify-content: center;
   margin: 0.3rem;
-  transition: 0.2s;
+  transition: 0.3s;
   cursor: pointer;
 }
 .social-icons-card i:hover {
@@ -1094,11 +1176,11 @@ button:hover span:nth-child(2) {
   font-weight: 600;
   border-bottom: black solid 1px;
   padding: 5px;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 .specials a i {
   margin-left: 10px;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 .specials a:hover {
   color: #ff7c08;
@@ -1265,7 +1347,7 @@ button:hover span:nth-child(2) {
   align-items: center;
   justify-content: center;
   margin: 0.3rem;
-  transition: 0.2s;
+  transition: 0.3s;
   cursor: pointer;
   height: 50px;
   width: 50px;
@@ -1298,7 +1380,7 @@ button:hover span:nth-child(2) {
 
 .footer-link {
   color: white;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 .footer-link:hover {
   color: #ff7c08;
@@ -1322,7 +1404,7 @@ footer {
   align-items: center;
   justify-content: center;
   margin: 0.3rem;
-  transition: 0.2s;
+  transition: 0.3s;
   cursor: pointer;
   height: 45px;
   width: 45px;
@@ -1458,6 +1540,31 @@ footer {
   .food-grid {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 300px;
+  }
+  .mobile-nav {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    display: block;
+    transition: 0.3s all;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  .mobile-nav div {
+    background-color: #fff;
+    padding-top: 1.5rem;
+  }
+  .mobile-nav a {
+    background-color: #fff;
+    padding: 1.5rem;
+  }
+  .mobile-nav .nav-icons {
+    padding-bottom: 1.5rem;
+  }
+  .mobile-nav.shown {
+    transform: scaleY(100%);
   }
 }
 @media (max-width: 768px) {

@@ -29,7 +29,7 @@ $fontCursive: 'Oleo Script', cursive;
   align-items: center;
   justify-content: center;
   margin: 0.3rem;
-  transition: 0.2s;
+  transition: 0.3s;
   cursor: pointer;
 }
 
@@ -41,6 +41,10 @@ $fontCursive: 'Oleo Script', cursive;
   border: white solid 4px;
   color: white;
   line-height: 1;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
 //flex
@@ -94,6 +98,10 @@ $fontCursive: 'Oleo Script', cursive;
 
 .gap1 {
   gap: 1rem;
+}
+
+.gap2 {
+  gap: 2rem;
 }
 
 .gap-card {
@@ -168,10 +176,10 @@ body {
 a {
   text-decoration: none;
   font-family: $fontPara;
-  transition: 0.2s;
+  transition: 0.3s;
 
   i {
-    transition: 0.2s;
+    transition: 0.3s;
   }
 }
 
@@ -266,6 +274,7 @@ h5 {
   background-color: $colorBgMain;
   height: 50px;
   box-sizing: border-box;
+  transition: 0.3s;
 
   .triangle-nav-left {
     width: 0;
@@ -328,12 +337,13 @@ h5 {
   box-sizing: border-box;
   background-color: white;
   position: sticky;
-  z-index: 5;
   top: 0;
   border-bottom: #dddddd solid 1px;
+  z-index: 5;
 
   .container {
     height: 79px;
+    position: relative;
   }
 
   a {
@@ -403,6 +413,66 @@ h5 {
   }
 }
 
+.mobile-nav {
+  display: none;
+}
+
+#pages-desktop {
+  position: relative;
+}
+
+#pages-mobile {
+  position: relative;
+}
+
+.sub-menu {
+  height: 0;
+  overflow: hidden;
+  transition: 0.3s all;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  background-color: white;
+  width: 250px;
+  max-width: 100vw;
+  border-radius: 5px;
+  color: $colorBgMain;
+  transform: translateY(0rem);
+  box-sizing: border-box;
+  box-shadow: $shadow;
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+
+  li {
+    padding: 1rem 2rem 1rem 0rem;
+    transition: 0.3s;
+    list-style: none;
+
+    &:hover {
+      color: $colorMain;
+      list-style: unset;
+      margin-left: 0.2rem;
+    }
+  }
+}
+
+#pages-sub-menu-m {
+  transform: translateY(-1.5rem);
+  z-index: 20;
+  left: -50%;
+}
+
+.show-sub-menu {
+  height: 500px;
+  overflow: auto;
+  transform: translateY(-1rem);
+}
+
+.show-sub-menu-mobile {
+  height: 250px;
+  overflow: auto;
+}
+
 .header-wrapper {
   background-image: url(" images/banner_bg.jpg");
   background-position: center;
@@ -449,7 +519,7 @@ button {
   border-radius: 30px;
   font-family: $fontPara;
   font-weight: 600;
-  transition: 0.2s ease-in;
+  transition: 0.3s ease-in;
   text-align: center;
   cursor: pointer;
 
@@ -497,12 +567,27 @@ button:hover {
 }
 
 .img-circle {
-  padding: 3rem;
+  padding: 1.5rem;
   text-align: center;
+
+  .spin-bg-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    animation: rotate 30s infinite linear;
+  }
+
+  .no-spin-img-wrapper {
+    position: relative;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
 
   img {
     width: 100%;
-    border-radius: 100%;
+    border-radius: 50%;
   }
 
   .discount-circle {
@@ -514,6 +599,7 @@ button:hover {
     top: 0;
     left: 0;
     margin: 3rem;
+    z-index: 2;
   }
 }
 
@@ -976,7 +1062,7 @@ button:hover {
   border-radius: 0 4px 4px 4px;
   font-size: 16px;
   font-weight: 600;
-  transition: 0.2s;
+  transition: 0.3s;
   cursor: pointer;
 
   div {
@@ -1012,7 +1098,7 @@ button:hover {
     border-radius: 4px;
     padding: 8px;
     margin: 2px;
-    transition: 0.2s;
+    transition: 0.3s;
   }
 
   i:hover {
@@ -1032,7 +1118,7 @@ button:hover {
   -moz-box-shadow: $shadow;
   padding: 30px;
   text-align: center;
-  transition: 0.3s;
+  transition: 0.5s ease;
   position: relative;
   margin: 0 13px 30px;
 
@@ -1117,7 +1203,7 @@ button:hover {
   align-items: center;
   justify-content: center;
   margin: 0.3rem;
-  transition: 0.2s;
+  transition: 0.3s;
   cursor: pointer;
 
   &:hover {
@@ -1151,11 +1237,11 @@ button:hover {
     font-weight: 600;
     border-bottom: black solid 1px;
     padding: 5px;
-    transition: 0.2s;
+    transition: 0.3s;
 
     i {
       margin-left: 10px;
-      transition: 0.2s;
+      transition: 0.3s;
     }
   }
 
@@ -1363,7 +1449,7 @@ button:hover {
 
 .footer-link {
   color: white;
-  transition: 0.2s;
+  transition: 0.3s;
 
   &:hover {
     color: $colorMain;
@@ -1518,6 +1604,35 @@ footer {
   .food-grid {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 300px;
+  }
+  .mobile-nav {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    display: block;
+    transition: 0.3s all;
+    transform: scaleY(0);
+    transform-origin: top;
+
+    div {
+      background-color: #fff;
+      padding-top: 1.5rem;
+    }
+
+    a {
+      background-color: #fff;
+      padding: 1.5rem;
+    }
+
+    .nav-icons {
+      padding-bottom: 1.5rem;
+    }
+  }
+
+  .mobile-nav.shown {
+    transform: scaleY(100%);
   }
 }
 
