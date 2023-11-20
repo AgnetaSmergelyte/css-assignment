@@ -5,7 +5,6 @@ const subMenuDesktop = document.querySelector('#pages-sub-menu-d');
 const showPagesMobile = document.querySelector('#pages-mobile');
 const subMenuMobile = document.querySelector('#pages-sub-menu-m');
 const scrollUpBtn = document.querySelector('.finger');
-const numberCircles = document.querySelectorAll('.number-circle');
 
 hamburger.onclick = () => {
     mobileNav.classList.toggle('shown');
@@ -40,12 +39,10 @@ scrollUpBtn.onclick = () => {
 
 function handleScroll() {
     const scrollY = window.scrollY;
-
-    // Show/hide the finger button based on the scroll position
     if (scrollY > window.innerHeight) {
-        scrollUpBtn.style.display = 'flex';
+        scrollUpBtn.style.opacity = '1';
     } else {
-        scrollUpBtn.style.display = 'none';
+        scrollUpBtn.style.opacity = '0';
     }
 }
 
@@ -85,17 +82,16 @@ function startNumberChange() {
         let currentNumber3 = Math.floor(percentage * (targetNumber3 - startNumber)) + startNumber;
         let currentNumber4 = Math.floor(percentage * (targetNumber4 - startNumber)) + startNumber;
 
-        numberElements[0].innerText = currentNumber1 + " +";
-        numberElements[1].innerText = currentNumber2 + " +";
-        numberElements[2].innerText = currentNumber3 + " +";
-        numberElements[3].innerText = currentNumber4 + " +";
-        numberElementBox.style.opacity = 1;
+        numberElements[0].textContent = currentNumber1 + " +";
+        numberElements[1].textContent = currentNumber2 + " +";
+        numberElements[2].textContent = currentNumber3 + " +";
+        numberElements[3].textContent = currentNumber4 + " +";
+        numberElementBox.style.opacity = '1';
 
         if (percentage < 1) {
             requestAnimationFrame(animateNumber);
         }
     }
 
-    // Start the animation
     requestAnimationFrame(animateNumber);
 }

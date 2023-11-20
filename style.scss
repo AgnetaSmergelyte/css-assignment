@@ -47,10 +47,6 @@ $fontCursive: 'Oleo Script', cursive;
   -webkit-tap-highlight-color: transparent;
 }
 
-body {
-  overflow-x: hidden;
-}
-
 //flex
 .d-flex {
   display: flex;
@@ -171,6 +167,7 @@ body {
 }
 
 //CONFIG
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -1467,12 +1464,13 @@ footer {
 .finger {
   position: sticky;
   bottom: 30px;
-  left: 95%;
+  left: 93%;
   z-index: 3;
   @include icon;
   height: 45px;
   width: 45px;
   border: white 1px solid;
+  transition: 0.3s;
 
   &:hover {
     background-color: $colorBgMain;

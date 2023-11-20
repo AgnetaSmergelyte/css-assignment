@@ -17,10 +17,6 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-body {
-  overflow-x: hidden;
-}
-
 .d-flex {
   display: flex;
 }
@@ -1397,7 +1393,7 @@ footer {
 .finger {
   position: sticky;
   bottom: 30px;
-  left: 95%;
+  left: 93%;
   z-index: 3;
   width: 30px;
   height: 30px;
@@ -1413,6 +1409,7 @@ footer {
   height: 45px;
   width: 45px;
   border: white 1px solid;
+  transition: 0.3s;
 }
 .finger:hover {
   background-color: #231f40;
