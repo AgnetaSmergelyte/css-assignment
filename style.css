@@ -17,6 +17,10 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .d-flex {
   display: flex;
 }

@@ -47,6 +47,10 @@ $fontCursive: 'Oleo Script', cursive;
   -webkit-tap-highlight-color: transparent;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 //flex
 .d-flex {
   display: flex;
