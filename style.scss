@@ -570,6 +570,8 @@ button:hover {
 .img-circle {
   padding: 1.5rem;
   text-align: center;
+  box-sizing: border-box;
+  overflow: hidden;
 
   .spin-bg-img {
     position: absolute;
@@ -1464,7 +1466,7 @@ footer {
 .finger {
   position: sticky;
   bottom: 30px;
-  left: 93%;
+  left: 90%;
   z-index: 3;
   @include icon;
   height: 45px;
